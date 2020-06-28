@@ -1,6 +1,6 @@
 ## Allows for caching of matrix inversion.
 
-## Creates a special cache matrix object for use in matrix inversion.
+## Creates a special cached matrix object for use in matrix inversion.
 makeCacheMatrix <- function(x = matrix())
 {
     inverse <- NULL
@@ -30,7 +30,7 @@ cacheSolve <- function(x, ...)
     }
     
     data <- x$get()
-    inverse <- solve(data)
+    inverse <- solve(data, ...)
     x$setinverse(inverse)
     inverse
 }
